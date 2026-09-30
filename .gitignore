@@ -1,0 +1,5 @@
+# 元画像はゲーム用データ（sprites.js / poses.js / assets.js）に埋め込み済みのため除外
+/*.png
+/キャラクター/
+/assets/
+.claude/
