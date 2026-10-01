@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0b1e">
+<title>SUPER HERO RUN 遊び方</title>
+<style>
+  :root {
+    --bg: #0d0b1e; --panel: #17142e; --line: #2c2752; --text: #ece9ff; --muted: #a9a3cc;
+    --gold: #ffd400; --red: #ff4d5e; --purple: #b36bff; --green: #3dff7a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text); line-height: 1.75;
+    font-family: "Hiragino Kaku Gothic ProN", "Meiryo", "Segoe UI", sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  header {
+    padding: 40px 16px 28px; text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, #3a1a6b 0%, transparent 70%);
+  }
+  header h1 { margin: 0; font-size: clamp(28px, 7vw, 48px); color: var(--gold); letter-spacing: .02em; text-shadow: 0 3px 0 #000; }
+  header p { margin: 8px 0 20px; color: var(--muted); }
+  .play {
+    display: inline-block; padding: 14px 32px; border-radius: 999px; background: var(--gold); color: #1a1200;
+    font-weight: 900; font-size: 18px; text-decoration: none; box-shadow: 0 4px 0 #a88a00;
+  }
+  .play:active { transform: translateY(2px); box-shadow: 0 2px 0 #a88a00; }
+  nav { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  nav a { color: var(--text); text-decoration: none; padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; background: var(--panel); }
+  main { max-width: 860px; margin: 0 auto; padding: 0 16px 60px; }
+  section { margin-top: 44px; }
+  h2 { font-size: 24px; margin: 0 0 4px; padding-left: 12px; border-left: 5px solid var(--purple); }
+  h3 { font-size: 18px; margin: 28px 0 8px; color: var(--gold); }
+  .lead { color: var(--muted); margin: 6px 0 0; }
+  ol, ul { padding-left: 1.4em; margin: 8px 0; }
+  li { margin: 4px 0; }
+  .table-wrap { overflow-x: auto; margin: 10px 0; border: 1px solid var(--line); border-radius: 10px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; min-width: 420px; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: var(--panel); color: var(--muted); font-weight: 700; white-space: nowrap; }
+  tr:last-child td { border-bottom: 0; }
+  kbd {
+    display: inline-block; min-width: 1.8em; padding: 1px 7px; margin: 1px 2px; text-align: center;
+    border: 1px solid #4a4380; border-bottom-width: 3px; border-radius: 6px; background: #221e40;
+    font-family: inherit; font-size: 14px; font-weight: 700; white-space: nowrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; width: 2.1em; height: 2.1em; border-radius: 50%;
+    border: 2px solid #fff6; background: #ffffff14; font-weight: 900; margin: 1px 2px;
+  }
+  .note { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; margin: 12px 0; }
+  .warn { color: var(--red); font-weight: 700; }
+  .chars { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 12px; }
+  .char { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 12px; display: flex; gap: 10px; align-items: center; }
+  .char img { width: 56px; height: 80px; object-fit: contain; flex: none; }
+  .char b { display: block; font-size: 16px; }
+  .char .skill { color: var(--gold); font-size: 13px; font-weight: 700; }
+  .char small { display: block; color: var(--muted); font-size: 12.5px; line-height: 1.5; margin-top: 2px; }
+  footer { text-align: center; padding: 30px 16px 50px; color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>SUPER HERO RUN</h1>
+  <p>遊び方マニュアル</p>
+  <a class="play" href="./">▶ ゲームで遊ぶ</a>
+  <nav>
+    <a href="#about">このゲームについて</a>
+    <a href="#pc">パソコン版</a>
+    <a href="#sp">スマホ版</a>
+    <a href="#chars">キャラクター</a>
+    <a href="#rules">ルール</a>
+    <a href="#help">困ったとき</a>
+  </nav>
+</header>
+
+<main>
+  <section id="about">
+    <h2>このゲームについて</h2>
+    <p>ゾンビだらけの街を駆け抜ける横スクロールアクションです。8人のヒーローから1人を選び、全3ステージと各ステージ最後のボス戦に挑みます。</p>
+    <ul>
+      <li>パソコンもスマホも同じURLで遊べます。インストールやログインは不要です</li>
+      <li>パソコンはキーボード、スマホは画面のボタンで操作します。キャラや敵、ルールはどちらも共通です</li>
+    </ul>
+  </section>
+
+  <section id="pc">
+    <h2>パソコン版</h2>
+    <p class="lead">キーボードだけで遊べます。音が出るので、音量を確かめてから始めてください。</p>
+
+    <h3>はじめ方</h3>
+    <ol>
+      <li>ブラウザ（Chrome、Edgeなど）でゲームのページを開く</li>
+      <li>タイトル画面で <kbd>Enter</kbd> を押す（クリックでもOK）</li>
+      <li>キャラ選択画面で <kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> でキャラを選び、<kbd>Enter</kbd> で決定（カードのクリックでもOK）</li>
+      <li>「WORLD 1-1」の表示のあと、ゲームスタート</li>
+    </ol>
+
+    <h3>キー操作</h3>
+    <div class="table-wrap"><table>
+      <tr><th>やりたいこと</th><th>キー</th><th>補足</th></tr>
+      <tr><td>左右に移動</td><td><kbd>←</kbd><kbd>→</kbd>（または <kbd>A</kbd><kbd>D</kbd>）</td><td></td></tr>
+      <tr><td>ジャンプ</td><td><kbd>Space</kbd>（または <kbd>Z</kbd> <kbd>↑</kbd> <kbd>W</kbd>）</td><td>長く押すほど高く跳ぶ</td></tr>
+      <tr><td>パンチ／空中キック</td><td><kbd>C</kbd>（または <kbd>K</kbd>）</td><td>地上でパンチ、ジャンプ中は飛び蹴り</td></tr>
+      <tr><td>しゃがむ</td><td><kbd>↓</kbd>（または <kbd>S</kbd>）</td><td>体が小さくなり、飛んでくる肉片をかわせる</td></tr>
+      <tr><td>ダッシュ</td><td><kbd>X</kbd>（または <kbd>Shift</kbd> <kbd>J</kbd>）を押しながら移動</td><td>ファイア状態のときは押すたびに火の玉</td></tr>
+      <tr><td>一時停止</td><td><kbd>P</kbd>（または <kbd>Esc</kbd>）</td><td>もう一度押すと再開</td></tr>
+      <tr><td>BGMのオン／オフ</td><td><kbd>M</kbd></td><td>効果音は鳴り続けます</td></tr>
+    </table></div>
+
+    <h3>画面の見方</h3>
+    <div class="table-wrap"><table>
+      <tr><th>表示</th><th>意味</th></tr>
+      <tr><td>キャラの顔 ×3</td><td>残り人数。最初は3人</td></tr>
+      <tr><td>SCORE</td><td>得点</td></tr>
+      <tr><td>● ×00</td><td>集めたコインの枚数</td></tr>
+      <tr><td>WORLD 1-1</td><td>今のステージ</td></tr>
+      <tr><td>TIME</td><td>残り時間。400から減り、60未満で赤くなる</td></tr>
+      <tr><td>BOSS ZOMBIE KING（赤いバー）</td><td>ボス戦のときだけ出る、ボスの残り体力</td></tr>
+    </table></div>
+  </section>
+
+  <section id="sp">
+    <h2>スマホ版</h2>
+    <p class="lead">スマホは<b>横向き</b>で遊びます。縦向きのままだと「スマホを横向きにして遊んでね」とだけ表示されます。</p>
+
+    <h3>はじめ方</h3>
+    <ol>
+      <li>SafariやChromeでゲームのページを開く</li>
+      <li>スマホを横向きにする（画面の回転ロックがオンならオフにする）</li>
+      <li>タイトル画面をタップする。Androidではここで全画面になります</li>
+      <li>遊びたいキャラのカードをタップするとスタート</li>
+    </ol>
+
+    <h3>ボタン操作</h3>
+    <p>ゲーム中は画面下に半透明のボタンが出ます。左手で移動、右手でアクションです。</p>
+    <div class="table-wrap"><table>
+      <tr><th>場所</th><th>ボタン</th><th>やること</th></tr>
+      <tr><td>左</td><td><span class="btn">◀</span><span class="btn">▶</span></td><td>左右に移動</td></tr>
+      <tr><td>左</td><td><span class="btn">▼</span></td><td>しゃがむ</td></tr>
+      <tr><td>右</td><td><span class="btn">A</span></td><td>ジャンプ。長く押すほど高く跳ぶ</td></tr>
+      <tr><td>右</td><td><span class="btn">P</span></td><td>パンチ。ジャンプ中は飛び蹴り</td></tr>
+      <tr><td>右</td><td><span class="btn">B</span></td><td>押しながら移動でダッシュ。ファイア状態のときは火の玉</td></tr>
+    </table></div>
+    <p>画面上の表示（残り人数・得点・コイン・残り時間・ボスの体力）は、パソコン版と同じです。</p>
+
+    <h3>スマホで遊ぶときのコツ</h3>
+    <ul>
+      <li><b>ホーム画面に追加するとアプリのように開けます。</b>iPhoneはSafariの共有ボタン →「ホーム画面に追加」、AndroidはChromeの「⋮」→「ホーム画面に追加」</li>
+      <li>iPhoneは全画面にならないので、ホーム画面から開くと画面を広く使えます</li>
+      <li>音が出ないときは、マナーモード（消音）をオフにしてください</li>
+      <li>スマホには一時停止とBGM切り替えのボタンはありません。中断するときはブラウザを閉じます（続きからは遊べません）</li>
+    </ul>
+  </section>
+
+  <section id="chars">
+    <h2>キャラクター</h2>
+    <p class="lead">8人はそれぞれ足の速さ・ジャンプ力・特技が違います。初めてならJACKかVIKTORが遊びやすいです。</p>
+    <div class="chars" id="charList"></div>
+  </section>
+
+  <section id="rules">
+    <h2>共通ルール</h2>
+    <p class="lead">ゴールの旗につかまるとステージクリアです。ただし旗の手前にボスがいて、倒すまでバリケードが開きません。</p>
+
+    <h3>敵とボス</h3>
+    <div class="table-wrap"><table>
+      <tr><th>敵</th><th>見た目</th><th>倒し方</th><th>得点</th></tr>
+      <tr><td>ゾンビ</td><td>緑色</td><td>踏む・パンチ・キック・火の玉</td><td>100</td></tr>
+      <tr><td>ジャンプゾンビ</td><td>紫色でぴょんぴょん跳ぶ。1-2から出る</td><td>踏む・パンチ・キック・火の玉</td><td>100</td></tr>
+      <tr><td>凶暴ゾンビ</td><td>赤く光る。1-2から出る</td><td><span class="warn">踏めない</span>。パンチ・キック・火の玉で倒す</td><td>200</td></tr>
+      <tr><td>ボス ZOMBIE KING</td><td>各ステージの最後にいる巨大ゾンビ</td><td>頭を踏む（体力1減る）、パンチ・キック（0.5）、火の玉（1/3）</td><td>撃破で5000</td></tr>
+    </table></div>
+    <p>ボスの体力は1-1が3、1-2が4、1-3が5です。歩いて近づく、大ジャンプで地面を揺らす、肉片を投げるの3つの攻撃をしてきます。体力が減るほど速くなります。</p>
+
+    <h3>ブロックとアイテム</h3>
+    <div class="table-wrap"><table>
+      <tr><th>もの</th><th>使い方・効果</th></tr>
+      <tr><td>「?」ブロック</td><td>下から頭で叩くか、横からパンチ。コインかアイテムが出る</td></tr>
+      <tr><td>レンガ</td><td>大きい状態で叩くと壊れる</td></tr>
+      <tr><td>コイン</td><td>100枚集めると残り人数が1人増える</td></tr>
+      <tr><td>キノコ（赤）</td><td>取ると体が大きくなり、1回攻撃を受けてもミスにならない</td></tr>
+      <tr><td>フラワー（炎の花）</td><td>大きいときに取るとファイア状態。火の玉が打てる（画面に2つまで）</td></tr>
+    </table></div>
+
+    <h3>ステージ</h3>
+    <div class="table-wrap"><table>
+      <tr><th>ステージ</th><th>名前</th><th>特徴</th></tr>
+      <tr><td>WORLD 1-1</td><td>ネオン廃墟街</td><td>雨の降る夜の街。敵は緑のゾンビだけ</td></tr>
+      <tr><td>WORLD 1-2</td><td>炎上ハイウェイ</td><td>火の粉が舞う。紫と赤のゾンビが加わる</td></tr>
+      <tr><td>WORLD 1-3</td><td>血の月タワー</td><td>一番長く、穴も広い。最後のボスは体力5</td></tr>
+    </table></div>
+    <ul>
+      <li>各ステージの真ん中あたりに<b>チェックポイントの旗</b>があります。通過したあとにミスすると、そこから再スタートできます</li>
+      <li>ゴールの旗は、根元の台にジャンプで飛び乗るとつかまれます。高い位置でつかむほど得点が高く、一番上なら5000点です</li>
+      <li>クリア時の残り時間もボーナス点になります。3ステージすべてクリアするとエンディングです</li>
+    </ul>
+
+    <h3>ミスとゲームオーバー</h3>
+    <p>次のどれかでミスになり、残り人数が1人減ります。0人になるとゲームオーバーで、キャラ選択画面に戻ります。</p>
+    <ul>
+      <li>小さい状態で敵にぶつかる、肉片に当たる（大きいときは小さくなるだけで済む）</li>
+      <li>穴に落ちる</li>
+      <li>残り時間が0になる</li>
+    </ul>
+
+    <h3>攻略のコツ</h3>
+    <ul>
+      <li>赤いゾンビは踏むと自分がダメージを受けます。必ずパンチか火の玉で倒しましょう</li>
+      <li>ボスは「踏む」が一番効きます。アリーナの左右にある足場から飛び降りると頭を狙いやすいです</li>
+      <li>ボスの前で立ち止まると体当たりされます。常に動き続け、飛んでくる肉片はしゃがんでかわしましょう</li>
+      <li>「?」ブロックは積極的に叩いて、キノコで大きくなっておくと安心です</li>
+    </ul>
+  </section>
+
+  <section id="help">
+    <h2>困ったとき</h2>
+    <div class="table-wrap"><table>
+      <tr><th>こんなとき</th><th>こうする</th></tr>
+      <tr><td>ファイル一覧のページが出て遊べない</td><td>github.com のページを開いています。<b>999ex.github.io</b> で始まるゲームのURLを開き直す</td></tr>
+      <tr><td>スマホで「横向きにして」とだけ出る</td><td>横向きにする。変わらないときは画面の回転ロックをオフにする</td></tr>
+      <tr><td>音が出ない</td><td>一度画面をタップ（クリック）する。スマホはマナーモードをオフ、パソコンは <kbd>M</kbd> でBGMがオフになっていないか確かめる</td></tr>
+      <tr><td>キーを押しても反応しない</td><td>ゲーム画面を一度クリックしてから操作する</td></tr>
+      <tr><td>画面が真っ黒のまま</td><td>ページを再読み込みする。通信が遅いと画像の読み込み（約5MB）に時間がかかります</td></tr>
+    </table></div>
+    <p style="text-align:center;margin-top:32px"><a class="play" href="./">▶ ゲームで遊ぶ</a></p>
+  </section>
+</main>
+
+<footer>SUPER HERO RUN</footer>
+
+<script src="sprites.js"></script>
+<script>
+  // キャラ一覧（画像はゲームと同じ sprites.js から読み込む）
+  const CHARS = [
+    ['AKARI', '二段ジャンプ', '空中でもう一度ジャンプできる。足もやや速い'],
+    ['JACK', 'バランス型', 'クセがなく操作しやすい'],
+    ['KAI', '超ダッシュ', 'ダッシュが一番速い。ジャンプはやや低め'],
+    ['LUNA', 'ハイジャンプ', '一番高く跳べる。足はやや遅め'],
+    ['MEILIN', '二段ジャンプ', '足もジャンプも少し高め'],
+    ['NOIR', 'ふんわり落下', '落ちるときにジャンプを押し続けるとゆっくり降りる'],
+    ['RYUJI', '超ダッシュ', '速さ重視。ジャンプは普通'],
+    ['VIKTOR', '最初からパワーアップ', 'スタート時から大きく、1回攻撃を受けても平気。足は遅め'],
+  ];
+  const list = document.getElementById('charList');
+  for (const [id, skill, desc] of CHARS) {
+    const el = document.createElement('div');
+    el.className = 'char';
+    const src = window.SPRITES && window.SPRITES[id];
+    el.innerHTML = (src ? `<img alt="${id}" src="${src}">` : '') +
+      `<div><b>${id}</b><span class="skill">${skill}</span><small>${desc}</small></div>`;
+    list.appendChild(el);
+  }
+</script>
+</body>
+</html>

@@ -7,6 +7,8 @@
 
 **https://999ex.github.io/zombie-hero-run/**
 
+遊び方マニュアル: https://999ex.github.io/zombie-hero-run/manual.html
+
 スマホは横向きにして遊んでください（画面にボタンが出ます）。
 
 ## 操作
@@ -23,6 +25,7 @@
 ## ファイル構成
 
 - `index.html` / `game.js` … ゲーム本体
+- `manual.html` … 遊び方マニュアル（パソコン版・スマホ版）
 - `sprites.js` … キャラ選択用の立ち絵
 - `poses.js` … アクション用ポーズ（構え・しゃがみ・キック・パンチ・被ダメ）
 - `assets.js` … ゾンビ・ボス・背景

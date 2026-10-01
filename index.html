@@ -21,10 +21,12 @@
   @media (pointer: coarse) { #touch { display: flex; } }
   #rotate { display: none; position: fixed; inset: 0; background: #111; color: #fff; font: 900 22px sans-serif; align-items: center; justify-content: center; text-align: center; z-index: 10; }
   @media (pointer: coarse) and (orientation: portrait) { #rotate { display: flex; } }
+  #help { position: fixed; top: max(10px, env(safe-area-inset-top)); right: max(10px, env(safe-area-inset-right)); z-index: 20; padding: 8px 16px; border-radius: 999px; background: #ffd400; color: #1a1200; font: 900 15px sans-serif; text-decoration: none; box-shadow: 0 3px 0 #a88a00; }
 </style>
 </head>
 <body>
 <div id="rotate">📱↻<br>スマホを横向きにして<br>遊んでね</div>
+<a id="help" href="manual.html">？ 遊び方</a>
 <canvas id="game" width="960" height="600"></canvas>
 <div id="touch">
   <div><button data-k="ArrowLeft">◀</button><button data-k="ArrowDown">▼</button><button data-k="ArrowRight">▶</button></div>

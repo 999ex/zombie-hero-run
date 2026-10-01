@@ -1114,7 +1114,12 @@ function drawHelpLine() {
   text('←→移動  ↓しゃがみ  SPACE/Z ジャンプ  C パンチ/空中キック  X ダッシュ(ファイア時は火の玉)  P ポーズ', W / 2, H - 16, 14, '#fff');
 }
 
+// 「遊び方」リンクはタイトルとキャラ選択画面だけに出す
+const helpLink = document.getElementById('help');
+let helpShown = null;
 function draw() {
+  const showHelp = state === 'title' || state === 'select';
+  if (helpLink && showHelp !== helpShown) { helpLink.style.display = showHelp ? '' : 'none'; helpShown = showHelp; }
   ctx.clearRect(0, 0, W, H);
   if (state === 'title') return drawTitle();
   if (state === 'select') return drawSelect();
